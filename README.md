@@ -1,4 +1,5 @@
 ## Install services
+cd charts
 helm upgrade --install api-gateway ./api-gateway --namespace=skills-services  
 helm upgrade --install identity-service ./identity-service --namespace=skills-services  
 helm upgrade --install recruitments-service ./recruitments-service --namespace=skills-services  
@@ -8,7 +9,7 @@ helm upgrade --install candidates-service ./candidates-service --namespace=skill
 helm upgrade --install operations-service ./operations-service --namespace=skills-services  
 helm upgrade --install metrics-service ./metrics-service --namespace=skills-services  
 helm upgrade --install scheduledjobs-service ./scheduledjobs-service --namespace=skills-services  
-
+cd ..
 ## Uninstall services
 
 helm uninstall api-gateway --namespace=skills-services
