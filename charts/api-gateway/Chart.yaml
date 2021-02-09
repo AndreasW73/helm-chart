@@ -2,8 +2,8 @@ apiVersion: v2
 name: api-gateway
 description: An api gateway for Skills!
 
-home: https://andreasw73.github.io/helm-chart/
-icon: https://andreasw73.github.io/helm-chart/consul-stack-220x234.png
+home: https://github.com/AndreasW73/helm-chart.git
+icon: https://github.com/AndreasW73/helm-chart.git/assets/api-gateway/220x234.png
 keywords:
   - discovering
   - configuring
