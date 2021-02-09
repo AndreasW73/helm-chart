@@ -21,6 +21,9 @@ helm uninstall operations-service --namespace=skills-services
 helm uninstall metrics-service --namespace=skills-services
 helm uninstall scheduledjobs-service --namespace=skills-services
 
+## Add repo
+helm repo add skills https://andreasw73.github.io/helm-chart/
+helm repo -h
 
 ## Extras  
 helm install mailhog codecentric/mailhog --namespace=skills-infrastructure
