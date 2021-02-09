@@ -21,9 +21,17 @@ helm uninstall operations-service --namespace=skills-services
 helm uninstall metrics-service --namespace=skills-services
 helm uninstall scheduledjobs-service --namespace=skills-services
 
+## Create packages
+helm package charts/*   
+
 ## Add repo
 helm repo add skills https://andreasw73.github.io/helm-chart/
 helm repo -h
+
+## Commit changes to repo
+
+## Create index.yaml
+helm repo index --url https://github.com/AndreasW73/helm-chart.git/ .
 
 ## Extras  
 helm install mailhog codecentric/mailhog --namespace=skills-infrastructure
@@ -34,9 +42,6 @@ helm upgrade --install fabio . --namespace=skills-infrastructure
 
 helm uninstall mailhog --namespace=skills-infrastructure
 helm uninstall fabio --namespace=skills-infrastructure
-
-## Create index.yaml
-helm repo index --url https://github.com/AndreasW73/helm-chart.git/ .
 
   
 
