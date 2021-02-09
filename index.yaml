@@ -1,0 +1,114 @@
+apiVersion: v1
+entries:
+  api-gateway:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-02-09T14:52:03.268877+01:00"
+    description: A Helm chart for Kubernetes
+    digest: f6bb8871f5f34dacd4c78e7c014455d6468d4429a86bcca999352e566bf9b5af
+    home: https://github.com/bitnami/charts/tree/master/bitnami/consul
+    icon: https://bitnami.com/assets/stacks/consul/img/consul-stack-220x234.png
+    keywords:
+    - discovering
+    - configuring
+    - services
+    maintainers:
+    - email: developers@ntrada.se
+      name: Ntrada
+    name: api-gateway
+    sources:
+    - https://github.com/bitnami/bitnami-docker-consul
+    - https://www.ntrada.io/
+    type: application
+    urls:
+    - https://github.com/AndreasW73/helm-chart.git/api-gateway-1.0.0.tgz
+    version: 1.0.0
+  candidates-service:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-02-09T14:52:03.269765+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 979f4f992026801c540f69a5b5377b0c9e3994fbabebdbb71727bba669dab582
+    name: candidates-service
+    type: application
+    urls:
+    - https://github.com/AndreasW73/helm-chart.git/candidates-service-1.0.0.tgz
+    version: 1.0.0
+  conferences-service:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-02-09T14:52:03.270397+01:00"
+    description: A Helm chart for Kubernetes
+    digest: f6aba12b1ed8e3abff7ebec625afd491ba854399e3bd20bf5ce934eec65534f3
+    name: conferences-service
+    type: application
+    urls:
+    - https://github.com/AndreasW73/helm-chart.git/conferences-service-1.0.0.tgz
+    version: 1.0.0
+  identity-service:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-02-09T14:52:03.274684+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 64c52cea03d239f5a4c96e3de0ce687313db10c7ff9379ba553d77d6b0c3d1e3
+    name: identity-service
+    type: application
+    urls:
+    - https://github.com/AndreasW73/helm-chart.git/identity-service-1.0.0.tgz
+    version: 1.0.0
+  meetings-service:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-02-09T14:52:03.275219+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 124819faef518b59a9bf67e071298469e1bd7c9b77a48b4eb12dd1e67537264a
+    name: meetings-service
+    type: application
+    urls:
+    - https://github.com/AndreasW73/helm-chart.git/meetings-service-1.0.0.tgz
+    version: 1.0.0
+  metrics-service:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-02-09T14:52:03.276926+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 982e3ce16139723b4a46b779e2c3acec94bfd3295052eed5f75c8ae799b9f39c
+    name: metrics-service
+    type: application
+    urls:
+    - https://github.com/AndreasW73/helm-chart.git/metrics-service-1.0.0.tgz
+    version: 1.0.0
+  operations-service:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-02-09T14:52:03.277438+01:00"
+    description: A Helm chart for Kubernetes
+    digest: ffd642b7159e1ef745a83d204b6ab7ee87eb0b5e123d50c7f56b94348074079d
+    name: operations-service
+    type: application
+    urls:
+    - https://github.com/AndreasW73/helm-chart.git/operations-service-1.0.0.tgz
+    version: 1.0.0
+  recruitments-service:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-02-09T14:52:03.277926+01:00"
+    description: A Helm chart for Kubernetes
+    digest: d91bbd1091e40299915afe13449e5500c536ce81931c6529da8d3a9fe7ac9d61
+    name: recruitments-service
+    type: application
+    urls:
+    - https://github.com/AndreasW73/helm-chart.git/recruitments-service-1.0.0.tgz
+    version: 1.0.0
+  scheduledjobs-service:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-02-09T14:52:03.278433+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 887010ab4a04ffd85b8cb96b01599e3bf05e1e095417dfc6bcb3f932774e68a7
+    name: scheduledjobs-service
+    type: application
+    urls:
+    - https://github.com/AndreasW73/helm-chart.git/scheduledjobs-service-1.0.0.tgz
+    version: 1.0.0
+generated: "2021-02-09T14:52:03.267546+01:00"
