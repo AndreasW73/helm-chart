@@ -1,9 +1,9 @@
 apiVersion: v2
 name: api-gateway
-description: A Helm chart for Kubernetes
+description: An api gateway for Skills!
 
-home: https://github.com/bitnami/charts/tree/master/bitnami/consul
-icon: https://bitnami.com/assets/stacks/consul/img/consul-stack-220x234.png
+home: https://andreasw73.github.io/helm-chart/
+icon: https://andreasw73.github.io/helm-chart/consul-stack-220x234.png
 keywords:
   - discovering
   - configuring
@@ -12,8 +12,7 @@ maintainers:
   - email: developers@ntrada.se
     name: Ntrada
 sources:
-  - https://github.com/bitnami/bitnami-docker-consul
-  - https://www.ntrada.io/
+  - https://andreasw73.github.io/helm-chart/  
 type: application
 version: 1.0.0
 appVersion: 1.0.0
