@@ -83,4 +83,4 @@ tolerations: []
 affinity: {}
 
 env: 
-    "FABIO_REGISTRY_CONSUL_ADDR": "consul-headless.skills-infrastructure:8500"
+    "FABIO_REGISTRY_CONSUL_ADDR": "consul-headless.infrastructure:8500"
