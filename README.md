@@ -21,8 +21,9 @@ helm upgrade --install meetings-service ./meetings-service --namespace=skills-se
 helm upgrade --install conferences-service ./conferences-service --namespace=skills-services  --set image.repository=compose_conferences-service --set image.tag=latest --set pullPolicy=Always
 helm upgrade --install candidates-service ./candidates-service --namespace=skills-services  --set image.repository=compose_candidates-service --set image.tag=latest --set pullPolicy=Always
 helm upgrade --install metrics-service ./metrics-service --namespace=skills-services  --set image.repository=compose_metrics-service --set image.tag=latest --set pullPolicy=Always
-helm upgrade --install operations-service ./operations-service --namespace=skills-services  --set image.tag=140
-helm upgrade --install scheduledjobs-service ./scheduledjobs-service --namespace=skills-services  --set image.repository=compose_scheduledjobs-service --set image.tag=latest --set pullPolicy=Always
+helm upgrade --install operations-service ./operations-service --namespace=skills-services  --set image.repository=compose_operations-service --set image.tag=latest --set pullPolicy=Always
+helm upgrade --install scheduledjobs-service ./scheduledjobs-service --namespace=skills-services  --set image.repository=compose_scheduledjobs-service --set image.tag=latest --set pullPolicy=Always --set service.type=LoadBalancer --set service.port=5011
+
 cd ..
 ## Uninstall services
 
@@ -50,7 +51,7 @@ helm repo index --url https://github.com/AndreasW73/helm-chart.git/ .
 
 ## Extras  
 helm upgrade --install skills ./skills-ingress --namespace=skills-infrastructure  --set image.tag=150
-helm install mailhog codecentric/mailhog --namespace=skills-infrastructure
+helm upgrade --install mailhog codecentric/mailhog --namespace=infrastructure --set service.type=LoadBalancer
 helm upgrade --install fabio ./fabio --namespace=infrastructure --set service.type=LoadBalancer --set service.port=9998
 helm upgrade --install jaeger ./jaeger --namespace=skills-tracing
 
