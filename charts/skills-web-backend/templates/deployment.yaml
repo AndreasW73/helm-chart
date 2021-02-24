@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "api-gateway.fullname" . }}
+  name: {{ include "skills-web-backend.fullname" . }}
   labels:
-    {{- include "api-gateway.labels" . | nindent 4 }}
+    {{- include "skills-web-backend.labels" . | nindent 4 }}
 spec:
 {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
 {{- end }}
   selector:
     matchLabels:
-      {{- include "api-gateway.selectorLabels" . | nindent 6 }}
+      {{- include "skills-web-backend.selectorLabels" . | nindent 6 }}
   template:
     metadata:
     {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
     {{- end }}
       labels:
-        {{- include "api-gateway.selectorLabels" . | nindent 8 }}
+        {{- include "skills-web-backend.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "api-gateway.serviceAccountName" . }}
+      serviceAccountName: {{ include "skills-web-backend.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -36,7 +36,7 @@ spec:
           ports:
             - name: http
               containerPort: 80
-              protocol: TCP           
+              protocol: TCP
           livenessProbe:
             httpGet:
               path: /

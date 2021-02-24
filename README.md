@@ -1,6 +1,6 @@
 ## Install services
 cd charts
-helm upgrade --install api-gateway ./api-gateway --namespace=skills-services  --set image.tag=150
+helm upgrade --install api-gateway ./api-gateway --namespace=skills-services  --set image.tag=171 --set service.type=LoadBalancer --set service.port=5000
 helm upgrade --install identity-service ./identity-service --namespace=skills-services --set image.tag=149  --set replicaCount=1
 helm upgrade --install recruitments-service ./recruitments-service --namespace=skills-services  --set image.tag=137
 helm upgrade --install meetings-service ./meetings-service --namespace=skills-services  --set image.tag=136
@@ -14,6 +14,7 @@ cd ..
 
 ## Install services (locally)
 cd charts
+helm upgrade --install skills-ingress ./skills-ingress
 helm upgrade --install api-gateway ./api-gateway --namespace=skills-services  --set image.repository=compose_api-gateway --set image.tag=latest --set pullPolicy=Always --set service.type=LoadBalancer --set service.port=5000
 helm upgrade --install identity-service ./identity-service --namespace=skills-services --set image.repository=compose_identity-service --set image.tag=latest --set pullPolicy=Always
 helm upgrade --install recruitments-service ./recruitments-service --namespace=skills-services  --set image.repository=compose_recruitments-service --set image.tag=latest --set pullPolicy=Always
@@ -21,12 +22,13 @@ helm upgrade --install meetings-service ./meetings-service --namespace=skills-se
 helm upgrade --install conferences-service ./conferences-service --namespace=skills-services  --set image.repository=compose_conferences-service --set image.tag=latest --set pullPolicy=Always
 helm upgrade --install candidates-service ./candidates-service --namespace=skills-services  --set image.repository=compose_candidates-service --set image.tag=latest --set pullPolicy=Always
 helm upgrade --install metrics-service ./metrics-service --namespace=skills-services  --set image.repository=compose_metrics-service --set image.tag=latest --set pullPolicy=Always
-helm upgrade --install operations-service ./operations-service --namespace=skills-services  --set image.repository=compose_operations-service --set image.tag=latest --set pullPolicy=Always
+helm upgrade --install operations-service ./operations-service --namespace=skills-services  --set image.repository=compose_operations-service --set image.tag=latest --set pullPolicy=Always --set service.type=LoadBalancer --set service.port=5005
 helm upgrade --install scheduledjobs-service ./scheduledjobs-service --namespace=skills-services  --set image.repository=compose_scheduledjobs-service --set image.tag=latest --set pullPolicy=Always --set service.type=LoadBalancer --set service.port=5011
 
 cd ..
 ## Uninstall services
 
+helm uninstall skills-ingress 
 helm uninstall api-gateway --namespace=skills-services
 helm uninstall identity-service --namespace=skills-services
 helm uninstall recruitments-service --namespace=skills-services
@@ -53,7 +55,7 @@ helm repo index --url https://github.com/AndreasW73/helm-chart.git/ .
 helm upgrade --install skills ./skills-ingress --namespace=skills-infrastructure  --set image.tag=150
 helm upgrade --install mailhog codecentric/mailhog --namespace=infrastructure --set service.type=LoadBalancer
 helm upgrade --install fabio ./fabio --namespace=infrastructure --set service.type=LoadBalancer --set service.port=9998
-helm upgrade --install jaeger ./jaeger --namespace=skills-tracing
+
 
 kubectl create -f https://raw.githubusercontent.com/jaegertracing/jaeger-kubernetes/master/all-in-one/jaeger-all-in-one-template.yml --namespace=skills-tracing
   
