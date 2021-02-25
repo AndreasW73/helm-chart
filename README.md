@@ -14,7 +14,7 @@ cd ..
 
 ## Install services (locally)
 cd charts
-helm upgrade --install skills-ingress ./skills-ingress
+helm upgrade --install skills-web-frontend ./skills-web-frontend --namespace=skills-services 
 helm upgrade --install api-gateway ./api-gateway --namespace=skills-services  --set image.repository=compose_api-gateway --set image.tag=latest --set pullPolicy=Always --set service.type=LoadBalancer --set service.port=5000
 helm upgrade --install identity-service ./identity-service --namespace=skills-services --set image.repository=compose_identity-service --set image.tag=latest --set pullPolicy=Always
 helm upgrade --install recruitments-service ./recruitments-service --namespace=skills-services  --set image.repository=compose_recruitments-service --set image.tag=latest --set pullPolicy=Always
@@ -28,7 +28,7 @@ helm upgrade --install scheduledjobs-service ./scheduledjobs-service --namespace
 cd ..
 ## Uninstall services
 
-helm uninstall skills-ingress 
+helm uninstall skills-web-frontend 
 helm uninstall api-gateway --namespace=skills-services
 helm uninstall identity-service --namespace=skills-services
 helm uninstall recruitments-service --namespace=skills-services

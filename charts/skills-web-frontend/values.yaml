@@ -1,18 +1,18 @@
-# Default values for api-gateway.
+# Default values for skills-web-frontend.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: wahlgrena/api-gateway
+  repository: wahlgrena/skills-web-frontend
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart version.
-  tag: "stable"
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: "api-gateway"
+fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -38,23 +38,26 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 80  
+  port: 80
 
 ingress:
   enabled: true
   annotations: 
     kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/use-regex: "true"
     cert-manager.io/cluster-issuer: letsencrypt-staging
   hosts:
     - host: skills-meet.westeurope.cloudapp.azure.com
-      paths: [/api-gateway(/|$)(.*)] 
+      paths: [/] 
       
-  tls: 
-    - secretName: tls-secret
-      hosts:
-        - skills-meet.westeurope.cloudapp.azure.com
+  # tls: 
+  #   - secretName: tls-secret
+  #     hosts:
+  #       - skills-meet.westeurope.cloudapp.azure.com
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
