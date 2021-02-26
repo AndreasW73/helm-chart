@@ -46,10 +46,10 @@ ingress:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /$1
     nginx.ingress.kubernetes.io/use-regex: "true"
-    cert-manager.io/cluster-issuer: letsencrypt-staging
+    cert-manager.io/cluster-issuer: letsencrypt
   hosts:
     - host: skills-meet.westeurope.cloudapp.azure.com
-      paths: [/api-gateway(/|$)(.*)] 
+      paths: [/api(/|$)(.*)] 
       
   tls: 
     - secretName: tls-secret
