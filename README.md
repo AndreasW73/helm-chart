@@ -1,7 +1,7 @@
 ## Install services
 cd charts
 helm upgrade --install skills-web-frontend ./skills-web-frontend --namespace=skills-services --set image.tag=192
-helm upgrade --install api-gateway ./api-gateway --namespace=skills-services  --set image.tag=173 --set service.type=LoadBalancer --set service.port=5000
+helm upgrade --install api-gateway ./api-gateway --namespace=skills-services  --set image.tag=193 --set service.type=LoadBalancer --set service.port=5000
 helm upgrade --install identity-service ./identity-service --namespace=skills-services --set image.tag=149  --set replicaCount=1
 helm upgrade --install recruitments-service ./recruitments-service --namespace=skills-services  --set image.tag=137
 helm upgrade --install meetings-service ./meetings-service --namespace=skills-services  --set image.tag=136
