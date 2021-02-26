@@ -29,7 +29,7 @@ helm upgrade --install scheduledjobs-service ./scheduledjobs-service --namespace
 cd ..
 ## Uninstall services
 
-helm uninstall skills-web-frontend 
+helm uninstall skills-web-frontend --namespace=skills-services
 helm uninstall api-gateway --namespace=skills-services
 helm uninstall identity-service --namespace=skills-services
 helm uninstall recruitments-service --namespace=skills-services
