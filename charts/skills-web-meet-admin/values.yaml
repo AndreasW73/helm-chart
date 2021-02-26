@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: wahlgrena/skills-web-frontend
+  repository: wahlgrena/skills-web-meet-admin
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart version.
   tag: "latest"

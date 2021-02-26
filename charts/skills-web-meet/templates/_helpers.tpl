@@ -2,7 +2,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "skills-web-backend.name" -}}
+{{- define "skills-web-meet.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -11,7 +11,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "skills-web-backend.fullname" -}}
+{{- define "skills-web-meet.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -27,16 +27,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "skills-web-backend.chart" -}}
+{{- define "skills-web-meet.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "skills-web-backend.labels" -}}
-helm.sh/chart: {{ include "skills-web-backend.chart" . }}
-{{ include "skills-web-backend.selectorLabels" . }}
+{{- define "skills-web-meet.labels" -}}
+helm.sh/chart: {{ include "skills-web-meet.chart" . }}
+{{ include "skills-web-meet.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -46,17 +46,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "skills-web-backend.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "skills-web-backend.name" . }}
+{{- define "skills-web-meet.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "skills-web-meet.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "skills-web-backend.serviceAccountName" -}}
+{{- define "skills-web-meet.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "skills-web-backend.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "skills-web-meet.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}

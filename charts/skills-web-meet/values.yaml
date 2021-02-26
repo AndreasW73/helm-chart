@@ -1,14 +1,14 @@
-# Default values for skills-web-backend.
+# Default values for skills-web-frontend.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: wahlgrena/skills-web-meet
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart version.
-  tag: ""
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -44,18 +44,19 @@ ingress:
   enabled: true
   annotations: 
     kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/use-regex: "true"
     cert-manager.io/cluster-issuer: letsencrypt
     kubernetes.io/tls-acme: 'true'
   hosts:
     - host: skills-meet.westeurope.cloudapp.azure.com
-      paths: [/webrtc(/|$)(.*)] 
+      paths: [/meet] 
       
   tls: 
     - secretName: tls-secret-prod
       hosts:
         - skills-meet.westeurope.cloudapp.azure.com
+
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
