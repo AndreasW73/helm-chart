@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: first-tls
+spec:
+  secretName: first-tls
+  dnsNames:
+  - "*.*.svc.cluster.local"
+  - "*.*"
+  issuerRef:
+    name: selfsigned-issuer

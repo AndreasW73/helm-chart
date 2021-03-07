@@ -45,17 +45,17 @@ ingress:
   annotations: 
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    cert-manager.io/cluster-issuer: letsencrypt
+    nginx.ingress.kubernetes.io/use-regex: "true"    
+    cert-manager.io/cluster-issuer: letsencrypt-prod
     kubernetes.io/tls-acme: 'true'
   hosts:
-    - host: skills-meet.westeurope.cloudapp.azure.com
+    - host: localhost
       paths: [/] 
       
   tls: 
-    - secretName: tls-secret-prod
+    - secretName: default-token-pvtlt
       hosts:
-        - skills-meet.westeurope.cloudapp.azure.com
+        - localhost
 
 
 resources: {}

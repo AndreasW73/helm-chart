@@ -7,7 +7,7 @@ helm upgrade --install recruitments-service ./recruitments-service --namespace=s
 helm upgrade --install meetings-service ./meetings-service --namespace=skills-services  --set image.tag=136
 helm upgrade --install conferences-service ./conferences-service --namespace=skills-services  --set image.tag=139
 helm upgrade --install candidates-service ./candidates-service --namespace=skills-services  --set image.tag=138
-helm upgrade --install operations-service ./operations-service --namespace=skills-services  --set image.tag=140
+helm upgrade --install operations-service ./operations-service --namespace=skills-services  --set image.tag=183
 helm upgrade --install metrics-service ./metrics-service --namespace=skills-services  --set image.tag=135
 helm upgrade --install scheduledjobs-service ./scheduledjobs-service --namespace=skills-services  --set image.tag=143
 cd ..
@@ -15,16 +15,19 @@ cd ..
 
 ## Install services (locally)
 cd charts
-helm upgrade --install skills-web-meet ./skills-web-meet --set image.tag=239 --namespace=skills-services 
-helm upgrade --install api-gateway ./api-gateway --namespace=skills-services  --set image.repository=compose_api-gateway --set image.tag=latest --set pullPolicy=Always --set service.type=LoadBalancer --set service.port=5000
+helm upgrade --install skills-web-meet ./skills-web-meet 
+helm upgrade --install skills-web-meet-admin ./skills-web-meet-admin --set image.repository=compose_skills-web-meet-admin --set --namespace=skills-services --set pullPolicy=Always
+helm upgrade --install api-gateway ./api-gateway --namespace=skills-services  --set image.repository=compose_api-gateway --set image.tag=latest --set pullPolicy=Always
+
+
 helm upgrade --install identity-service ./identity-service --namespace=skills-services --set image.repository=compose_identity-service --set image.tag=latest --set pullPolicy=Always
 helm upgrade --install recruitments-service ./recruitments-service --namespace=skills-services  --set image.repository=compose_recruitments-service --set image.tag=latest --set pullPolicy=Always
 helm upgrade --install meetings-service ./meetings-service --namespace=skills-services  --set image.repository=compose_meetings-service --set image.tag=latest --set pullPolicy=Always
 helm upgrade --install conferences-service ./conferences-service --namespace=skills-services  --set image.repository=compose_conferences-service --set image.tag=latest --set pullPolicy=Always
 helm upgrade --install candidates-service ./candidates-service --namespace=skills-services  --set image.repository=compose_candidates-service --set image.tag=latest --set pullPolicy=Always
 helm upgrade --install metrics-service ./metrics-service --namespace=skills-services  --set image.repository=compose_metrics-service --set image.tag=latest --set pullPolicy=Always
-helm upgrade --install operations-service ./operations-service --namespace=skills-services  --set image.repository=compose_operations-service --set image.tag=latest --set pullPolicy=Always --set service.type=LoadBalancer --set service.port=5005
-helm upgrade --install scheduledjobs-service ./scheduledjobs-service --namespace=skills-services  --set image.repository=compose_scheduledjobs-service --set image.tag=latest --set pullPolicy=Always --set service.type=LoadBalancer --set service.port=5011
+helm upgrade --install operations-service ./operations-service --namespace=skills-services  --set image.repository=compose_operations-service --set image.tag=latest --set pullPolicy=Always 
+helm upgrade --install scheduledjobs-service ./scheduledjobs-service --namespace=skills-services  --set image.repository=compose_scheduledjobs-service --set image.tag=latest --set pullPolicy=Always 
 
 cd ..
 ## Uninstall services
