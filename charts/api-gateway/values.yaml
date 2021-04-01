@@ -49,13 +49,13 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     kubernetes.io/tls-acme: 'true'
   hosts:
-    - host: localhost
+    - host: meet-skills-online.westeurope.cloudapp.azure.com
       paths: [/api(/|$)(.*)] 
       
   tls: 
     - secretName: tls-secret-prod
       hosts:
-        - localhost
+        - meet-skills-online.westeurope.cloudapp.azure.com
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
