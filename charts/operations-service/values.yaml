@@ -54,10 +54,10 @@ ingress:
     - host: localhost
       paths: [/operations(/|$)(.*)] 
       
-  tls: 
-    - secretName: tls-secret-prod
-      hosts:
-        - localhost
+  # tls: 
+  #   - secretName: tls-secret-prod
+  #     hosts:
+  #       - localhost
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

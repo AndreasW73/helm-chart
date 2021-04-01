@@ -26,7 +26,7 @@ helm upgrade --install meetings-service ./meetings-service --namespace=skills-se
 helm upgrade --install conferences-service ./conferences-service --namespace=skills-services  --set image.repository=compose_conferences-service --set image.tag=latest --set pullPolicy=Always
 helm upgrade --install candidates-service ./candidates-service --namespace=skills-services  --set image.repository=compose_candidates-service --set image.tag=latest --set pullPolicy=Always
 helm upgrade --install metrics-service ./metrics-service --namespace=skills-services  --set image.repository=compose_metrics-service --set image.tag=latest --set pullPolicy=Always
-helm upgrade --install operations-service ./operations-service --namespace=skills-services  --set image.repository=compose_operations-service --set image.tag=latest --set pullPolicy=Always 
+helm upgrade --install operations-service ./operations-service --namespace=skills-services  --set image.repository=compose_operations-service --set image.tag=latest --set pullPolicy=Always --set service.type=LoadBalancer --set service.port=5005
 helm upgrade --install scheduledjobs-service ./scheduledjobs-service --namespace=skills-services  --set image.repository=compose_scheduledjobs-service --set image.tag=latest --set pullPolicy=Always 
 
 cd ..
