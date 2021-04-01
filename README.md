@@ -1,7 +1,7 @@
 ## Install services
 cd charts
 helm upgrade --install skills-web-frontend ./skills-web-frontend --namespace=skills-services --set image.tag=196
-helm upgrade --install api-gateway ./api-gateway --namespace=skills-services  --set image.tag=193 --set service.type=LoadBalancer --set service.port=5000
+helm upgrade --install api-gateway ./api-gateway --namespace=skills-services  --set service.type=LoadBalancer --set image.tag=280
 helm upgrade --install identity-service ./identity-service --namespace=skills-services --set image.tag=149  --set replicaCount=1
 helm upgrade --install recruitments-service ./recruitments-service --namespace=skills-services  --set image.tag=137
 helm upgrade --install meetings-service ./meetings-service --namespace=skills-services  --set image.tag=136
@@ -17,7 +17,7 @@ cd ..
 cd charts
 helm upgrade --install skills-web-meet ./skills-web-meet 
 helm upgrade --install skills-web-meet-admin ./skills-web-meet-admin --set image.repository=compose_skills-web-meet-admin --set --namespace=skills-services --set pullPolicy=Always
-helm upgrade --install api-gateway ./api-gateway --namespace=skills-services  --set image.repository=compose_api-gateway --set image.tag=latest --set pullPolicy=Always
+helm upgrade --install api-gateway ./api-gateway --namespace=skills-services  --set image.repository=compose_api-gateway --set image.tag=280 --set pullPolicy=Always
 
 
 helm upgrade --install identity-service ./identity-service --namespace=skills-services --set image.repository=compose_identity-service --set image.tag=latest --set pullPolicy=Always

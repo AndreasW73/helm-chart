@@ -52,10 +52,10 @@ ingress:
     - host: meet-skills-online.westeurope.cloudapp.azure.com
       paths: [/api(/|$)(.*)] 
       
-  tls: 
-    - secretName: tls-secret-prod
-      hosts:
-        - meet-skills-online.westeurope.cloudapp.azure.com
+  # tls: 
+  #   - secretName: tls-secret-prod
+  #     hosts:
+  #       - meet-skills-online.westeurope.cloudapp.azure.com
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
