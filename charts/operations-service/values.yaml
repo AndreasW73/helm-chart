@@ -8,7 +8,7 @@ image:
   repository: wahlgrena/operations-service
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart version.
-  tag: "stable"
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -51,7 +51,7 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     kubernetes.io/tls-acme: 'true'
   hosts:
-    - host: meet-skills-online.westeurope.cloudapp.azure.com
+    - host: wahlgrens.tplinkdns.com
       paths: [/operations(/|$)(.*)] 
       
   # tls: 

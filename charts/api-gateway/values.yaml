@@ -50,7 +50,7 @@ ingress:
     kubernetes.io/tls-acme: 'true'
   hosts:
     # - host: meet-skills-online.westeurope.cloudapp.azure.com
-    - host: localhost
+    - host: wahlgrens.tplinkdns.com
       paths: [/api(/|$)(.*)] 
       
   # tls: 

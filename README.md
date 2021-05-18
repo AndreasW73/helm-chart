@@ -1,7 +1,7 @@
-## Install services
+## Install services https://pacroy.medium.com/single-node-kubernetes-on-home-lab-using-microk8s-metallb-and-traefik-7bb1ea38fcc2
 cd charts
 helm upgrade --install skills-web-frontend ./skills-web-frontend --namespace=skills-services --set image.tag=196
-helm upgrade --install api-gateway ./api-gateway --namespace=skills-services  --set service.type=LoadBalancer --set image.tag=280
+helm upgrade --install api-gateway ./api-gateway --namespace=skills-services  --set service.type=LoadBalancer  --set service.port=5000 --set image.tag=stable
 helm upgrade --install identity-service ./identity-service --namespace=skills-services --set image.tag=149  --set replicaCount=1
 helm upgrade --install recruitments-service ./recruitments-service --namespace=skills-services  --set image.tag=137
 helm upgrade --install meetings-service ./meetings-service --namespace=skills-services  --set image.tag=136
@@ -16,18 +16,18 @@ cd ..
 ## Install services (locally)
 cd charts
 helm upgrade --install skills-web-meet ./skills-web-meet 
-helm upgrade --install skills-web-meet-admin ./skills-web-meet-admin --set image.repository=compose_skills-web-meet-admin --set --namespace=skills-services --set pullPolicy=Always
-helm upgrade --install api-gateway ./api-gateway --namespace=skills-services  --set image.repository=compose_api-gateway --set image.tag=280 --set pullPolicy=Always
+helm upgrade --install skills-web-meet-admin ./skills-web-meet-admin --set image.repository=wahlgrena/skills-web-meet-admin --set --namespace=skills-services --set pullPolicy=Always
 
+helm upgrade --install api-gateway ./api-gateway --namespace=skills-services  --set image.repository=wahlgrena/api-gateway --set image.tag=stable --set pullPolicy=Always --set service.type=LoadBalancer --set service.port=5000
 
-helm upgrade --install identity-service ./identity-service --namespace=skills-services --set image.repository=compose_identity-service --set image.tag=latest --set pullPolicy=Always
-helm upgrade --install recruitments-service ./recruitments-service --namespace=skills-services  --set image.repository=compose_recruitments-service --set image.tag=latest --set pullPolicy=Always
-helm upgrade --install meetings-service ./meetings-service --namespace=skills-services  --set image.repository=compose_meetings-service --set image.tag=latest --set pullPolicy=Always
-helm upgrade --install conferences-service ./conferences-service --namespace=skills-services  --set image.repository=compose_conferences-service --set image.tag=latest --set pullPolicy=Always
-helm upgrade --install candidates-service ./candidates-service --namespace=skills-services  --set image.repository=compose_candidates-service --set image.tag=latest --set pullPolicy=Always
-helm upgrade --install metrics-service ./metrics-service --namespace=skills-services  --set image.repository=compose_metrics-service --set image.tag=latest --set pullPolicy=Always
-helm upgrade --install operations-service ./operations-service --namespace=skills-services  --set image.repository=compose_operations-service --set image.tag=latest --set pullPolicy=Always --set service.type=LoadBalancer --set service.port=5005
-helm upgrade --install scheduledjobs-service ./scheduledjobs-service --namespace=skills-services  --set image.repository=compose_scheduledjobs-service --set image.tag=latest --set pullPolicy=Always 
+helm upgrade --install identity-service ./identity-service --namespace=skills-services --set image.repository=wahlgrena/identity-service --set image.tag=stable --set pullPolicy=Always
+helm upgrade --install recruitments-service ./recruitments-service --namespace=skills-services  --set image.repository=wahlgrena/recruitments-service --set image.tag=stable --set pullPolicy=Always
+helm upgrade --install meetings-service ./meetings-service --namespace=skills-services  --set image.repository=wahlgrena/meetings-service --set image.tag=stable --set pullPolicy=Always
+helm upgrade --install conferences-service ./conferences-service --namespace=skills-services  --set image.repository=wahlgrena/conferences-service --set image.tag=stable --set pullPolicy=Always
+helm upgrade --install candidates-service ./candidates-service --namespace=skills-services  --set image.repository=wahlgrena/candidates-service --set image.tag=stable --set pullPolicy=Always
+helm upgrade --install metrics-service ./metrics-service --namespace=skills-services  --set image.repository=wahlgrena/metrics-service --set image.tag=stable --set pullPolicy=Always
+helm upgrade --install operations-service ./operations-service --namespace=skills-services  --set image.repository=wahlgrena/operations-service --set image.tag=stable --set pullPolicy=Always --set service.type=LoadBalancer --set service.port=5005
+helm upgrade --install scheduledjobs-service ./scheduledjobs-service --namespace=skills-services  --set image.repository=wahlgrena/scheduledjobs-service --set image.tag=stable --set pullPolicy=Always 
 
 cd ..
 ## Uninstall services
@@ -81,14 +81,14 @@ kubectl port-forward -n kubeapps svc/kubeapps 8080:80
 http://127.0.0.1:8080/
 
 ## Port forwarding
-kubectl port-forward --namespace skills-logging svc/seq 5341:80
+kubectl port-forward --namespace logging svc/seq 5341:80
 kubectl port-forward --namespace skills-infrastructure svc/fabio 9998:9998
 kubectl port-forward --namespace skills-infrastructure svc/consul-ui 8500:80
 kubectl port-forward --namespace skills-monitoring  svc/grafana 3000:3000
 
 kubectl port-forward --namespace skills-monitoring svc/kibana 5601:5601
 
-kubectl port-forward --namespace skills-infrastructure svc/mongodb 27017:27017
+kubectl port-forward --namespace database svc/mongodb 27017:27017
 kubectl port-forward --namespace skills-infrastructure svc/mailhog 8025:8025
 kubectl port-forward --namespace skills-infrastructure svc/influxdb 8086:8086 & influx -host 127.0.0.1 -port 8086
 kubectl port-forward --namespace skills-infrastructure svc/prometheus-kube-prometheus-prometheus 9090:9090
