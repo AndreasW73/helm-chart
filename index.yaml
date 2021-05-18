@@ -3,9 +3,9 @@ entries:
   api-gateway:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-04-01T09:21:06.780327+02:00"
+    created: "2021-05-18T14:04:56.912543+02:00"
     description: An api gateway for Skills!
-    digest: fe18093010524a1de6b18df9d9939ebb5376fee1f782fb7df1cd3aca1cc7bc01
+    digest: 9453176dca2d7c59bfa12a7a11d6e68f1fb96744248f8ec6f20a6d2d4bec580f
     home: https://github.com/AndreasW73/helm-chart.git
     icon: https://andreasw73.github.io/helm-chart/assets/api-gateway/220x234.png
     keywords:
@@ -24,7 +24,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-04-01T09:21:06.779458+02:00"
+    created: "2021-05-18T14:04:56.911866+02:00"
     description: An api gateway for Skills!
     digest: 2b74bfb919dee1b7acd460164c67dab2c3d5f61268cb5ad840c9763098cc238a
     home: https://github.com/AndreasW73/helm-chart.git
@@ -46,9 +46,9 @@ entries:
   candidates-service:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-04-01T09:21:06.781105+02:00"
+    created: "2021-05-18T14:04:56.91312+02:00"
     description: A Helm chart for Kubernetes
-    digest: da1429fa728825531bdcde894be768624ec48ed3bc573dfef8ba370e46ebad6b
+    digest: b66108796cb52396e7abfa54bddc41f91493f4a143d33d660fcecd7acb81eb90
     name: candidates-service
     type: application
     urls:
@@ -57,9 +57,9 @@ entries:
   conferences-service:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-04-01T09:21:06.781919+02:00"
+    created: "2021-05-18T14:04:56.91365+02:00"
     description: A Helm chart for Kubernetes
-    digest: 6301127eff12ac372efe5561532b226b8f0215bb13599193f4bae9e712b66492
+    digest: 0f23726f9c5b3fcb7f6f14c87c3e517b60d5cd1bebe658a91ac32820b86801d9
     name: conferences-service
     type: application
     urls:
@@ -68,9 +68,9 @@ entries:
   fabio:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-04-01T09:21:06.782651+02:00"
+    created: "2021-05-18T14:04:56.914225+02:00"
     description: A Helm chart for Kubernetes
-    digest: 22e966a9f539ca566214d299539374ebd329c8daca12745b3529ecd589519878
+    digest: eacf27d333b4fd54cea7ca07649db65e329ce7e3a2dcae9261af12b8f9b45bb3
     name: fabio
     type: application
     urls:
@@ -79,9 +79,9 @@ entries:
   identity-service:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-04-01T09:21:06.783336+02:00"
+    created: "2021-05-18T14:04:56.914757+02:00"
     description: A Helm chart for Kubernetes
-    digest: 907228cf65a46721fe1902e785a0f145d648d3a129f8e557ca15cf9c9e2afbbf
+    digest: 3e6ad42a14614dd47b02c1686cf1942e76a8e69c4c92ae67ac6a811f0c7b152e
     name: identity-service
     type: application
     urls:
@@ -90,9 +90,9 @@ entries:
   meetings-service:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-04-01T09:21:06.784056+02:00"
+    created: "2021-05-18T14:04:56.915284+02:00"
     description: A Helm chart for Kubernetes
-    digest: e691300d8ff16d2e458eb8fde14c0f6077c6d8b924baa90c1e84c68af68215a1
+    digest: f095fa48ef94c71f7555de303e0b01bb8b76ab4bed291fcd5082ddfc529f6e15
     name: meetings-service
     type: application
     urls:
@@ -101,9 +101,9 @@ entries:
   metrics-service:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-04-01T09:21:06.784792+02:00"
+    created: "2021-05-18T14:04:56.915853+02:00"
     description: A Helm chart for Kubernetes
-    digest: b45c786bca08e7522a0627e8e1aa5540d6c1dfeb455ab623f42c683a6a64cfef
+    digest: 162cf3399bc27a618f0ddd90c39977ec58983a3094e820efde8bef4f515d66eb
     name: metrics-service
     type: application
     urls:
@@ -112,20 +112,31 @@ entries:
   operations-service:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-04-01T09:21:06.78561+02:00"
+    created: "2021-05-18T14:04:56.916958+02:00"
     description: A Helm chart for Kubernetes
-    digest: f08df16b1ceb7e6dc076812033e6c3e936deec0c2e23e6f0af81b8f93fd09179
+    digest: 2cc727956abb2711db444de2731720915751a0845a4dbc84b88187b5759cd0da
     name: operations-service
     type: application
     urls:
     - https://github.com/AndreasW73/helm-chart.git/operations-service-1.0.0.tgz
     version: 1.0.0
+  projects-service:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2021-05-18T14:04:56.917676+02:00"
+    description: A Helm chart for Kubernetes
+    digest: 211afa4ba8cfd4daa19a55f6e324a8a2b7068e64702eb2531d39889e7c8c232f
+    name: projects-service
+    type: application
+    urls:
+    - https://github.com/AndreasW73/helm-chart.git/projects-service-1.0.0.tgz
+    version: 1.0.0
   recruitments-service:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-04-01T09:21:06.789845+02:00"
+    created: "2021-05-18T14:04:56.918305+02:00"
     description: A Helm chart for Kubernetes
-    digest: 677145343eaf7e1f7b27d6d72d393b51e490e67b4a25847498e8724e0030cd35
+    digest: 4d8b1ea9be2a285510f40c4b2507c511afe8d186080d7dde5ff7fcb94ad94fe4
     name: recruitments-service
     type: application
     urls:
@@ -134,9 +145,9 @@ entries:
   scheduledjobs-service:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-04-01T09:21:06.790664+02:00"
+    created: "2021-05-18T14:04:56.918889+02:00"
     description: A Helm chart for Kubernetes
-    digest: 2f4d55d561448470670e0e4f99a2b35beb4f4b9acbc1b47222e8d23fb1c8237c
+    digest: b2b6130c9d0185aebe6d8f6beaddc36e8aea04757ce341c42d46c3fb5e12108f
     name: scheduledjobs-service
     type: application
     urls:
@@ -145,9 +156,9 @@ entries:
   skills-web-meet:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-04-01T09:21:06.791497+02:00"
+    created: "2021-05-18T14:04:56.919552+02:00"
     description: A Helm chart for Kubernetes
-    digest: be482c8515e89810abc866ab60d451de8c89560d1b80fa4b4dde9da771575c45
+    digest: abde15a87f72011416e25488bdf792aa2207614879b89abaf3fdd664ddf545d3
     name: skills-web-meet
     type: application
     urls:
@@ -156,12 +167,12 @@ entries:
   skills-web-meet-admin:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2021-04-01T09:21:06.792302+02:00"
+    created: "2021-05-18T14:04:56.920188+02:00"
     description: A Helm chart for Kubernetes
-    digest: 04eeaccb583281105b29e498f9a64f1abc99e185892b1cc20bd633aadd72415b
+    digest: 01864354b4f747faf83958854acc7fbc76522bd33ad2d0ac2a04b48bf070132e
     name: skills-web-meet-admin
     type: application
     urls:
     - https://github.com/AndreasW73/helm-chart.git/skills-web-meet-admin-1.0.0.tgz
     version: 1.0.0
-generated: "2021-04-01T09:21:06.776378+02:00"
+generated: "2021-05-18T14:04:56.909046+02:00"
